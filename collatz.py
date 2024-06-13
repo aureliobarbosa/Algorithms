@@ -1,5 +1,3 @@
-import sys
-
 # Algumas pequenas sugestões.
 
 # Para alcançar números maiores seria interessante usar numpy.
@@ -69,16 +67,22 @@ def collatz(n):
     print(" Numeros ", numeros)
 
 
-if __name__ == "__main__":
-
-    if len(sys.argv) == 1:
+# Apenas para adicionar a funcionalidade de script no console/linha de comando.
+def main(argv):
+    if len(argv) == 1:
         print("Evolua um numero usando as regras de Collatz:")
-        n = input("Digite um número inteiro: ")
+        value = input("Digite um número inteiro: ")
     else:
-        n = sys.argv[1]
+        value = argv[1]
 
     try:
-        n = int(n)
+        n = int(value)
         collatz(n)
     except ValueError:
-        print("Digite um número inteiro")
+        print(f"ValueError: '{value}' não é um número inteiro!")
+
+
+if __name__ == "__main__":
+    import sys
+
+    main(sys.argv)
