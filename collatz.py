@@ -18,7 +18,10 @@ def is_prime(num):
 
 # By using recursion it is possible to calculate them in a faster way.
 # Check number_decomposition.py
-# Note que aqui não é necessário criar uma tabela pq o número não se repete em collatz,
+
+
+# Note que aqui não é necessário criar uma tabela de anotação (lookup table)
+# pq o número não se repete em collatz,
 # mas se usar uma função recursiva, ele pode se repetir nele mesmo, aí vale a pena.
 def prime_factors(num):
     factors = []
