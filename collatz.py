@@ -1,8 +1,14 @@
+import sys
+
 # Algumas pequenas sugestões.
+
 # Para alcançar números maiores seria interessante usar numpy.
+# Mas isso é a última coisa a se fazer.
 
 
 # the simplest way to speedup this is to use make this  function a lookup table
+# from functools import lru_cache
+# @lru_cache(max_size=10*3)
 def is_prime(num):
     if num < 2:
         return False
@@ -12,7 +18,10 @@ def is_prime(num):
     return True
 
 
-# By using recursion it is possible to calculate them in a faster way. Check my Prime decomposition.
+# By using recursion it is possible to calculate them in a faster way.
+# Check number_decomposition.py
+# Note que aqui não é necessário criar uma tabela pq o número não se repete em collatz,
+# mas se usar uma função recursiva, ele pode se repetir nele mesmo, aí vale a pena.
 def prime_factors(num):
     factors = []
     divisor = 2
@@ -25,7 +34,9 @@ def prime_factors(num):
     return factors
 
 
-# Heheh, o ideal é não usar os prints, talvez guardar o histórico com a
+# Vc está buscando duas informações aqui: a decomposição de primos e o collatz.abs
+# O ideal é a função fazer apenas uma tarefa, sem os prints. A parte de exibição do resultado
+# pode ser feita na função main, que irei introduzir logo abaixo.
 def collatz(n):
     numeros = []
     ind = []
@@ -56,3 +67,18 @@ def collatz(n):
     print(" Total operacoes ", nu_par + nu_impar)
     print(" Indice ", ind)
     print(" Numeros ", numeros)
+
+
+if __name__ == "__main__":
+
+    if len(sys.argv) == 1:
+        print("Evolua um numero usando as regras de Collatz:")
+        n = input("Digite um número inteiro: ")
+    else:
+        n = sys.argv[1]
+
+    try:
+        n = int(n)
+        collatz(n)
+    except ValueError:
+        print("Digite um número inteiro")
