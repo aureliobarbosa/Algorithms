@@ -1,0 +1,5 @@
+1.92 μs ± 364 ns per loop (mean ± std. dev. of 10 runs, 10 loops each)
+42.2 μs ± 24.7 μs per loop (mean ± std. dev. of 10 runs, 10 loops each)
+932 μs ± 298 μs per loop (mean ± std. dev. of 10 runs, 10 loops each)
+52.7 ms ± 95.8 μs per loop (mean ± std. dev. of 10 runs, 10 loops each)
+4.7 s ± 53.4 ms per loop (mean ± std. dev. of 10 runs, 10 loops each)
