@@ -5,8 +5,8 @@
 
 
 # the simplest way to speedup this is to use make this  function a lookup table
-# from functools import lru_cache
-# @lru_cache(max_size=10*3)
+# from functools import cache
+# @cache
 def is_prime(num):
     if num < 2:
         return False
